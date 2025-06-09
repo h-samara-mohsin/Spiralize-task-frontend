@@ -86,7 +86,7 @@ body {
       flex-wrap: wrap;
       align-items: center;
       gap: 12px;
-      font-family: "Montserrat", sans-serif;
+      font-family: var(--font-primary);
     }
 
     .outlined {
@@ -867,7 +867,7 @@ body {
   position: relative;
   width: 100%;
   overflow: hidden;
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--font-primary);
   .left {
     position: relative;
     .green-bg {
