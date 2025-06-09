@@ -1,3 +1,4 @@
+// Form label handling
 var fname = document.getElementById("f-name");
 var lname = document.getElementById("l-name");
 var email = document.getElementById("email-label");
@@ -126,7 +127,7 @@ window.onclick = function (event) {
   }
 }
 
-
+// Form error handling
 document.querySelector(".submit-btn").addEventListener("click", function (e) {
   e.preventDefault();
 
@@ -153,67 +154,40 @@ document.querySelector(".submit-btn").addEventListener("click", function (e) {
   });
 
   if (!hasError) {
-    // alert("Form submitted successfully!");
     window.location.href = "./thankyou.html";
   }
 });
 
 
 // Carousel JS
+
 let currentSlide = 0;
 const dots = document.querySelectorAll('.dot');
-const carousel = document.getElementById('carousel');
+const carouselTrack = document.getElementById('carouselTrack');
+const totalSlides = document.querySelectorAll('.carousel-slide').length;
 
-const slides = [
-  {
-    name: 'Abbie Harvey',
-    text: 'I have been caring for my mom & dad off and on for about 10 years now, and I know the importance of me being there for appointments. Older people need attention, love and care that they truly deserve.',
-    image: './assets/carousel-assets/Mask Group.png' // NEW Image
-  },
-  {
-    name: 'James Smith',
-    text: 'Supporting my grandparents taught me the value of patience and empathy. I try to be there every weekend to spend quality time and assist with anything they need.',
-    image: './assets/carousel-assets/Mask Group (1).png' // NEW Image
-  },
-  {
-    name: 'Emily Rose',
-    text: 'Caring for elders has helped me grow emotionally and mentally. It’s all about giving back love and time to the ones who raised us.',
-    image: './assets/carousel-assets/Mask Group (2).png' // NEW Image
-  }
-];
+function updateCarousel() {
+  carouselTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
 
-function renderSlide(index) {
-  const { name, text, image } = slides[index];
-
-  const imgEl = carousel.querySelector('.testimonial-img img');
-  const nameEl = carousel.querySelector('.testimonial-content h3');
-  const textEl = carousel.querySelector('.testimonial-content p');
-
-  imgEl.src = image;
-  nameEl.textContent = name;
-  textEl.textContent = text;
-
-  // Dots active class
   dots.forEach(dot => dot.classList.remove('active'));
-  dots[index].classList.add('active');
+  dots[currentSlide].classList.add('active');
 }
 
-
 function nextSlide() {
-  currentSlide = (currentSlide + 1) % slides.length;
-  renderSlide(currentSlide);
+  currentSlide = (currentSlide + 1) % totalSlides;
+  updateCarousel();
 }
 
 function prevSlide() {
-  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-  renderSlide(currentSlide);
-  console.log("Pressed");
+  currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+  updateCarousel();
 }
 
 function goToSlide(index) {
   currentSlide = index;
-  renderSlide(index);
+  updateCarousel();
 }
+
 
 
 // Responsive Navbar
