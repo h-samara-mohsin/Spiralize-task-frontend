@@ -778,6 +778,7 @@ body {
 /* my practise */
 .video-section {
   display: flex;
+  flex-wrap: nowrap;
   width: 100%;
   height: 648px;
   position: relative;
@@ -788,24 +789,16 @@ body {
   position: relative;
   width: 50%;
   height: 100%;
+  overflow: hidden;
 }
 
 .green-bg {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  top: 0;
+  left: 0;
+  width: 755px;
+  height: 648px;
   z-index: 1;
-  background: url("green-svg.svg") no-repeat;
-  background-size: cover;
-}
-
-.white-overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-  background: url("transparent-svg.svg") no-repeat;
-  background-size: cover;
 }
 
 .left-content {
@@ -816,25 +809,42 @@ body {
 }
 
 .left-content h2 {
-  font-size: 32px;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.left-content h2 .outlined {
+  color: transparent;
+  -webkit-text-stroke: 1px white;
   font-weight: 700;
 }
 
-.left-content h2 span {
+.left-content h2 .filled {
   color: white;
+  font-weight: 700;
+}
+
+.feature {
+  margin-bottom: 20px;
 }
 
 .feature h3 {
   font-weight: 600;
-  margin-top: 20px;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.feature p {
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 .right-side {
   position: relative;
   width: 50%;
   height: 100%;
-  background: url("your-image.jpg") no-repeat center center;
-  background-size: cover;
+  background: url('./assets/video-assets/video-bg.png') center center / cover no-repeat;
 }
 
 .play-button-wrapper {
@@ -878,6 +888,24 @@ body {
   position: absolute;
   bottom: 20px;
   right: 20px;
+  z-index: 3;
+}
+
+.white-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px; /* Adjust for perfect match — you can test 100-120px */
+  height: 648px;
+  z-index: 5;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.white-overlay svg {
+  width: 779px;
+  height: 648px;
+  transform: translateX(-679px); /* 779 - 100 = 679 */
 }
 
 /* Footer CSS */
@@ -1216,26 +1244,7 @@ body {
     }
   }
 
-  /*  */
-  .footer {
-    .main {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: 20px;
 
-      .right {
-        margin-top: 10px;
-
-        a {
-          display: inline-block;
-          margin: 0 6px;
-          font-size: 13px;
-        }
-      }
-    }
-  }
-}
 
 /* Tablet responsive */
 @media (min-width: 768px) and (max-width: 1023px) {
