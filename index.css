@@ -72,7 +72,7 @@ body {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  padding: 127px 0px;
+  padding: 140px 0px;
   background-color: #f8f8f8;
   background: url(./assets/hero-assets/background.png);
   background-position: center;
@@ -87,7 +87,7 @@ body {
       align-items: center;
       gap: 12px;
       font-family: var(--font-primary);
-      margin-bottom: 16px; /* add this */
+      margin-bottom: 16px;
     }
 
     .outlined {
@@ -117,10 +117,8 @@ body {
       rgba(42, 125, 108, 0.88),
       rgba(62, 105, 96, 0.88) 62%
     );
-    /* box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.12); */
     padding: 40px;
     border-radius: 2px;
-    /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
     box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.25);
     width: 100%;
     max-width: 472px;
@@ -279,6 +277,14 @@ body {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        &::after {
+          content: "";
+          display: block;
+          width: 70%;
+          height: 1px;
+          background: #eaeaea;
+          margin-top: 8px;
+        }
         .heading {
           font-size: 36px;
           line-height: 46px;
@@ -499,8 +505,6 @@ body {
   width: 269px;
   height: 269px;
   border-radius: 10px 0 0 10px;
-  /* object-fit: cover;
-  object-position: top; */
 }
 
 .carousel-slide .testimonial-content {
@@ -536,7 +540,7 @@ body {
       &::after {
         content: "";
         display: block;
-        width: 44%;
+        width: 50%;
         height: 1px;
         background: #eaeaea;
         margin-top: 8px;
@@ -960,7 +964,7 @@ body {
     padding: 100px 20px 200px;
     background-position: left;
     background-size: cover;
-    .main-div {
+    .main-container {
       text-align: center;
       .heading {
         font-size: 36px;
@@ -1003,11 +1007,17 @@ body {
       .images {
         display: none;
       }
-      .text-sec .head .heading {
-        font-size: 24px;
-        line-height: 32px;
-        font-weight: 700;
+      .text-sec .head {
+        .heading {
+          font-size: 24px;
+          line-height: 32px;
+          font-weight: 700;
+        }
+        &::after {
+          width: 40%;
+        }
       }
+
       .text-sec .head .line {
         width: 79px;
       }
@@ -1096,15 +1106,13 @@ body {
     .text-sec {
       max-width: 100%;
       .head {
-        flex-direction: column;
-        align-items: flex-start;
         gap: 10px;
         .heading {
           font-size: 24px;
           line-height: 36px;
         }
-        img {
-          width: 144px;
+        &::after {
+          width: 50%;
         }
       }
 
@@ -1275,7 +1283,7 @@ body {
     padding-top: 140px;
     background-position: left;
 
-    .main-div {
+    .main-container {
       text-align: center;
 
       .heading {
@@ -1330,9 +1338,11 @@ body {
       }
       .text-sec {
         .head {
-          flex-direction: column;
-          align-items: flex-start;
           gap: 10px;
+
+          &::after {
+            width: 70%;
+          }
 
           .heading {
             font-size: 28px;
@@ -1432,8 +1442,13 @@ body {
   .organize {
     padding: 80px 20px 20px;
     .text-sec {
-      .head .heading img {
-        width: 68px;
+      .head {
+        .heading img {
+          width: 68px;
+        }
+        &::after {
+          width: 12%;
+        }
       }
       max-width: 100%;
       .text {
@@ -1477,7 +1492,7 @@ body {
     .left {
       width: 100%;
       .green-bg {
-        background: url(./assets/video-assets/responsive/Rectangle-1);
+        background: url(./assets/video-assets/responsive/Rectangle-1.png);
         background-position: bottom;
         background-size: cover;
         max-width: 100%;
