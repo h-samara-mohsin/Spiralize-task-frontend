@@ -87,6 +87,7 @@ body {
       align-items: center;
       gap: 12px;
       font-family: var(--font-primary);
+      margin-bottom: 16px; /* add this */
     }
 
     .outlined {
@@ -104,7 +105,7 @@ body {
 
     p {
       max-width: 800px;
-      margin: 0 auto 40px;
+      margin: 0 auto 20px;
       font-size: 14px;
       color: white;
       width: 601px;
@@ -116,10 +117,11 @@ body {
       rgba(42, 125, 108, 0.88),
       rgba(62, 105, 96, 0.88) 62%
     );
-    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.12);
+    /* box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.12); */
     padding: 40px;
     border-radius: 2px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
+    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.25);
     width: 100%;
     max-width: 472px;
     height: 449px;
@@ -327,7 +329,7 @@ body {
               cursor: pointer;
               transition: box-shadow 0.2s ease, transform 0.1s ease;
               box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
-              font-weight: 700;
+              font-weight: 800;
               font-size: 18px;
               display: flex;
               justify-content: center;
@@ -497,6 +499,8 @@ body {
   width: 269px;
   height: 269px;
   border-radius: 10px 0 0 10px;
+  /* object-fit: cover;
+  object-position: top; */
 }
 
 .carousel-slide .testimonial-content {
@@ -529,6 +533,14 @@ body {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      &::after {
+        content: "";
+        display: block;
+        width: 44%;
+        height: 1px;
+        background: #eaeaea;
+        margin-top: 8px;
+      }
       .heading {
         font-size: 36px;
         line-height: 46px;
@@ -987,7 +999,7 @@ body {
   /*  */
   .understand {
     padding: 10px 0px;
-    .div {
+    .image-container {
       .images {
         display: none;
       }
@@ -1302,7 +1314,7 @@ body {
     padding: 60px 20px;
     justify-content: baseline;
 
-    .div {
+    .image-container {
       gap: 40px;
       max-width: 100%;
       .images {
