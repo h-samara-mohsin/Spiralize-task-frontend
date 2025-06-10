@@ -79,7 +79,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   padding-top: 127px;
-  .main-div {
+  .main-container {
     .heading {
       font-size: 64px;
       line-height: 72px;
@@ -262,7 +262,7 @@ body {
   display: flex;
   justify-content: center;
   padding: 100px 40px;
-  .div {
+  .image-container {
     width: 100%;
     max-width: 85%;
     display: flex;
@@ -677,7 +677,7 @@ body {
       left: 0;
       width: 755px;
       height: 648px;
-      background: url(./assets/video-assets/Group\ 51.png);
+      background: url(./assets/video-assets/green-bg.png);
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
@@ -1362,17 +1362,17 @@ body {
 
   .carousel-container {
     display: flex;
-    flex-direction: row; 
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     gap: 20px;
 
     .arrow-icon {
-      display: none !important; 
+      display: none !important;
     }
 
     .testimonial-img {
-      width: 220px; 
+      width: 220px;
       height: 220px;
       flex-shrink: 0;
 
@@ -1465,7 +1465,7 @@ body {
     .left {
       width: 100%;
       .green-bg {
-        background: url(./assets/video-assets/responsive/Rectangle-1.png);
+        background: url(./assets/video-assets/responsive/Rectangle-1);
         background-position: bottom;
         background-size: cover;
         max-width: 100%;
